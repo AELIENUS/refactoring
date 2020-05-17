@@ -2,21 +2,25 @@ import java.lang.String;
 import java.util.*;
 
 class Customer {
-    private final String name;
+    private final String Name;
     private final Vector<Rental> rentals = new Vector<>();
-    public Customer (String newName){
-        name = newName;
+    public Customer (String name)
+    {
+        Name = name;
     }
 
-    public void addRental(Rental arg) {
+    public void addRental(Rental arg)
+    {
         rentals.addElement(arg);
     }
 
-    public String getName (){
-        return name;
+    public String getName ()
+    {
+        return Name;
     }
 
-    public String statement() {
+    public String statement()
+    {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
         var enum_rentals = rentals.elements();
@@ -43,7 +47,8 @@ class Customer {
         return result.toString();
     }
 
-    private double amountFor(Rental each) {
+    private double amountFor(Rental each)
+    {
         double thisAmount = 0;
         switch (each.getMovie().getPriceCode()) {
             case Movie.REGULAR -> {
