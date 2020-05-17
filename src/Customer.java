@@ -3,7 +3,7 @@ import java.util.*;
 
 class Customer {
     private final String name;
-    private final Vector rentals = new Vector();
+    private final Vector<Rental> rentals = new Vector<>();
     public Customer (String newName){
         name = newName;
     }
@@ -25,7 +25,7 @@ class Customer {
 
         while (enum_rentals.hasMoreElements()) {
             double thisAmount;
-            Rental each = (Rental) enum_rentals.nextElement();
+            Rental each = enum_rentals.nextElement();
             //determine amounts for each line
             thisAmount = amountFor(each);
             // add frequent renter points
