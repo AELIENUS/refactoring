@@ -4,8 +4,8 @@ import java.util.*;
 class Customer {
     private String name;
     private Vector rentals = new Vector();
-    public Customer (String newname){
-        name = newname;
+    public Customer (String newName){
+        name = newName;
     };
     public void addRental(Rental arg) {
         rentals.addElement(arg);
@@ -16,7 +16,7 @@ class Customer {
     public String statement() {
         double totalAmount = 0;
         int frequentRenterPoints = 0;
-        Enumeration enum_rentals = rentals.elements();	    
+        var enum_rentals = rentals.elements();
         StringBuilder result = new StringBuilder("Rental Record for " + this.getName() + "\n");
         result.append("\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n");
 
@@ -49,7 +49,7 @@ class Customer {
                     thisAmount += (each.getDaysRented() - 2) * 1.5;
             }
             case Movie.NEW_RELEASE -> thisAmount += each.getDaysRented() * 3;
-            case Movie.CHILDRENS -> {
+            case Movie.CHILDREN -> {
                 thisAmount += 1.5;
                 if (each.getDaysRented() > 3)
                     thisAmount += (each.getDaysRented() - 3) * 1.5;
