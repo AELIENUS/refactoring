@@ -9,17 +9,23 @@ class MovieTest {
 
     @BeforeEach
     void setUp() {
-        movie = new Movie("lol123", 123);
+        movie = new Movie("lol123", 0);
     }
 
     @Test
     void getPriceCode() {
-        assertEquals(123, movie.getPriceCode());
+        assertEquals(0, movie.getPriceCode());
     }
 
     @Test
     void getTitle() {
         assertEquals("lol123", movie.getTitle());
+    }
+
+    @Test
+    public void getCharge()
+    {
+        assertEquals(14.0, movie.getCharge(10), 0);
     }
 
 }

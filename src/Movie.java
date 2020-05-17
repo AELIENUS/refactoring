@@ -5,14 +5,13 @@ public class Movie {
 
     private final String Title;
     private Price Price;
-    private int PriceCode;
 
     public Movie(String title, int priceCode) {
         Title = title;
-        PriceCode = priceCode;
+        setPriceCode(priceCode);
     }
     public int getPriceCode() {
-        return PriceCode;
+        return Price.getPriceCode();
     }
     public void setPriceCode(int priceCode) {
         switch(priceCode)
@@ -30,9 +29,17 @@ public class Movie {
                 throw new IllegalArgumentException("PriceCode not in existence!");
 
         }
-        PriceCode = priceCode;
     }
     public String getTitle (){
         return Title;
+    }
+
+    public double getCharge(int daysRented) {
+        return Price.getCharge(daysRented);
+    }
+
+    public int getFrequentRenterPoints(int daysRented)
+    {
+        return Price.getFrequentRenterPoints(daysRented);
     }
 }

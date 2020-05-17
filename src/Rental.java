@@ -16,6 +16,11 @@ class Rental {
         return RentedMovie;
     }
 
+    public int getFrequentRenterPoints()
+    {
+        return RentedMovie.getFrequentRenterPoints(DaysRented);
+    }
+
     public double getCharge()
     {
         double totalCharge = 0;

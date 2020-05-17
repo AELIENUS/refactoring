@@ -10,7 +10,7 @@ class RentalTest {
 
     @BeforeEach
     void setUp() {
-        movie = new Movie("lol123", 123);
+        movie = new Movie("lol123", 0);
         rental = new Rental(movie, 69);
     }
 
