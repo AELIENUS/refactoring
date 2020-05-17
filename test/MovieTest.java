@@ -21,4 +21,5 @@ class MovieTest {
     void getTitle() {
         assertEquals("lol123", movie.getTitle());
     }
+
 }

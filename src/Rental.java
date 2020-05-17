@@ -1,10 +1,10 @@
 class Rental {
-    private final Movie Movie;
+    private final Movie RentedMovie;
     private final int DaysRented;
 
     public Rental(Movie movie, int daysRented)
     {
-        Movie = movie;
+        RentedMovie = movie;
         DaysRented = daysRented;
     }
     public int getDaysRented()
@@ -13,10 +13,10 @@ class Rental {
     }
     public Movie getMovie()
     {
-        return Movie;
+        return RentedMovie;
     }
 
-    private double getCharge()
+    public double getCharge()
     {
         double totalCharge = 0;
         switch (this.getMovie().getPriceCode()) {
