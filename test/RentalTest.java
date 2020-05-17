@@ -11,16 +11,27 @@ class RentalTest {
     @BeforeEach
     void setUp() {
         movie = new Movie("lol123", 0);
-        rental = new Rental(movie, 69);
+        rental = new Rental(movie, 10);
     }
 
     @Test
     void getDaysRented() {
-        assertEquals(69, rental.getDaysRented());
+        assertEquals(10, rental.getDaysRented());
     }
 
     @Test
     void getMovie() {
         assertEquals(movie, rental.getMovie());
+    }
+
+    @Test
+    void getFrequentRenterPoints(){
+        assertEquals(1, rental.getFrequentRenterPoints());
+    }
+
+    @Test
+    void getCharge()
+    {
+        assertEquals(14.0, rental.getCharge(), 0);
     }
 }
