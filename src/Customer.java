@@ -28,7 +28,6 @@ class Customer {
         result.append("\t" + "Title" + "\t" + "\t" + "Days" + "\t" + "Amount" + "\n");
 
         while (enum_rentals.hasMoreElements()) {
-            double thisAmount;
             Rental each = enum_rentals.nextElement();
             //determine amounts for each line
             thisAmount = amountFor(each);
@@ -47,24 +46,14 @@ class Customer {
         return result.toString();
     }
 
-    private double amountFor(Rental rental)
+    private double getTotalCharge()
     {
-        double thisAmount = 0;
-        switch (rental.getMovie().getPriceCode()) {
-            case Movie.REGULAR -> {
-                thisAmount += 2;
-                if (rental.getDaysRented() > 2)
-                    thisAmount += (rental.getDaysRented() - 2) * 1.5;
-            }
-            case Movie.NEW_RELEASE -> thisAmount += rental.getDaysRented() * 3;
-            case Movie.CHILDREN -> {
-                thisAmount += 1.5;
-                if (rental.getDaysRented() > 3)
-                    thisAmount += (rental.getDaysRented() - 3) * 1.5;
-            }
+        double totalCharge = 0;
+        for(Rental rental: rentals)
+        {
+            totalCharge = totalCharge + rental.getCharge();
         }
-        return thisAmount;
+        return totalCharge;
     }
-
 }
     
